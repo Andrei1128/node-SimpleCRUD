@@ -1,3 +1,4 @@
+/* @import 'bulma/css/bulma.min.css'; */
 body {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
@@ -6,29 +7,32 @@ body {
 }
 
 .produs-wrapper {
-    width: 200px;
-    margin-top: 50px;
+    gap: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    border: 1px solid gray;
+    align-items: flex-start;
+    border: 1px solid #0483aa;
     padding: 20px;
     border-radius: 25px;
-    box-shadow: 5px 5px 10px lightgray;
+    box-shadow: 5px 5px 10px #0483aa15;
+}
+
+.produs-wrapper h2 {
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin: 0px;
 }
 
 .form-title {
     align-self: center;
-    margin: 0;
+    font-weight: 300;
 }
 
 .form-wrapper {
-    font-family: sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
     padding-top: 30px;
     margin-bottom: 50px;
-    width: 180px;
+    width: 190px;
     display: flex;
     flex-direction: column;
 }
@@ -37,37 +41,59 @@ body {
     margin-bottom: 5px;
 }
 
+
 input {
-    border-width: 1px;
-    border-radius: 5px;
+    font-size: 14px;
+    border-color: #0483aa;
+    border-radius: 3px;
+    margin: 10px 0;
 }
 
-button {
+.btn {
+    font-size: 14px;
+    text-decoration: none;
     background-color: #0483aa;
     color: white;
     cursor: pointer;
     transition: 0.3s;
     border: none;
     padding: 5px 12px;
-    margin-top: 20px;
-    border-radius: 25px
+    border-radius: 25px;
+    margin: 3px;
 }
 
-button:hover {
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px;
+    align-items: center;
+}
+
+.btn:hover {
     transition: 0.5s;
     background-color: #0483aad2;
 }
 
-table {
-
-    border-collapse: collapse;
-    width: 80%;
+.btn-wrapper {
+    display: flex;
+    align-items: center;
 }
 
-table td,
-table th {
-    padding-left: 10px;
-    border: 1px solid #ddd;
+.btn-td {
+    width: 1px;
+}
+
+.btn-back {
+    font-size: 17px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    margin-top: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 40%;
 }
 
 table tr:nth-child(even) {
@@ -76,11 +102,12 @@ table tr:nth-child(even) {
 
 table th {
     text-align: left;
-    background-color: #0483aa;
-    color: white;
+    background-color: #e0e0e0;
 }
 
 table h3,
-h2 {
-    margin: 4px;
+table h2 {
+    letter-spacing: 1px;
+    font-weight: 300;
+    margin: 0px;
 }

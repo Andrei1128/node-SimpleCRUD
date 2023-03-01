@@ -3,6 +3,7 @@ const app = express();
 const ejsMate = require("ejs-mate");
 const ejs = require("ejs");
 const bodyParser = require("body-parser");
+const methodOverride = require("method-override");
 const { v4: uuidv4 } = require("uuid");
 const PORT = 3000;
 
@@ -24,8 +25,9 @@ let produse = [
   },
 ];
 
+app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
-// app.set("views", __dirname + "/views");
+app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -36,13 +38,23 @@ app.get("/produse", (req, res) => {
 });
 
 app.get("/produse/:id", (req, res) => {
-  console.log(req.body);
   const produs = produse.find((produs) => produs.id === req.params.id);
   res.render("produs/produs.ejs", { produs });
 });
 
+app.delete("/produse/:id", (req, res) => {
+  produse = produse.filter((produse) => produse.id !== req.params.id);
+  res.redirect("/produse");
+});
+
+app.put("/produse/:id", (req, res) => {
+  index = produse.findIndex((produs) => produs.id === req.params.id);
+  produse[index].nume = req.body.nume;
+  produse[index].cantitate = req.body.cantitate;
+  res.redirect("/produse");
+});
+
 app.post("/produse", (req, res) => {
-  // console.log(req.query, req.body, req.params);
   produse = [
     ...produse,
     {

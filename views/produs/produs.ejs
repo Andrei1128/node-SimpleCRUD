@@ -1,9 +1,20 @@
 <% layout('boilerplate/layout.ejs') %>
-    <div class="produs-wrapper">
-        <h1>
-            <%= produs.nume %>
-        </h1>
-        <h1>
-            <%= produs.cantitate %> pcs
-        </h1>
+    <a class="btn btn-back" href="/produse">Inapoi</a>
+    <div class="wrapper">
+        <div class="produs-wrapper">
+            <h2>
+                Nume: <%= produs.nume %>
+            </h2>
+            <h2>
+                Cantitate: <%= produs.cantitate %> pcs
+            </h2>
+        </div>
+        <div class="form-wrapper">
+            <h2 class="form-title">Editeaza produs</h2>
+            <form action="/produse/<%=produs.id%>?_method=PUT" method="POST">
+                <input required type="text" name="nume" value=<%=produs.nume %>>
+                <input required type="text" name="cantitate" value=<%=produs.cantitate %>>
+                <button class="btn">Modifica</button>
+            </form>
+        </div>
     </div>

@@ -2,35 +2,46 @@
     <div class="form-wrapper">
         <h2 class="form-title">Adauga produs</h2>
         <form action="/produse" method="POST">
-            <p>Nume</p>
-            <input required type="text" name="nume">
-            <p>Cantitate</p>
-            <input required type="text" name="cantitate">
-            <button>Submit</button>
+            <input required type="text" name="nume" placeholder="Nume">
+            <input required type="text" name="cantitate" placeholder="Cantitate">
+            <button class="btn">Adauga</button>
         </form>
     </div>
-    <table>
-        <tr>
-            <th>
-                <h2> Nume</h2>
-            </th>
-            <th>
-                <h2>Cantitate</h2>
-            </th>
-        </tr>
-        <% for(let produs of produse) { %>
+    <table class="table">
+        <thead>
             <tr>
-                <td>
-                    <h3>
-                        <%= produs.nume %>
-                    </h3>
-                </td>
-                <td>
-                    <h3>
-                        <%= produs.cantitate %>
-                            pcs
-                    </h3>
-                </td>
+                <th>
+                    <h2> Nume</h2>
+                </th>
+                <th>
+                    <h2>Cantitate</h2>
+                </th>
             </tr>
-            <% } %>
+        </thead>
+        <tfoot>
+            <% for(let produs of produse) { %>
+                <tr>
+                    <td>
+                        <h3>
+                            <%= produs.nume %>
+                        </h3>
+                    </td>
+                    <td>
+                        <h3>
+                            <%= produs.cantitate %>
+                                pcs
+                        </h3>
+                    </td>
+                    <td class="btn-td">
+                        <div class="btn-wrapper">
+                            <form action="/produse/<%=produs.id%>?_method=DELETE" method="POST">
+                                <button class="btn">Sterge</button>
+                            </form>
+                            <a class="btn" href="/produse/<%=produs.id%>">Vezi</a>
+                        </div>
+                    </td>
+                    </td>
+                </tr>
+                <% } %>
+        </tfoot>
     </table>
