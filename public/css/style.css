@@ -1,113 +1,58 @@
-/* @import 'bulma/css/bulma.min.css'; */
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .produs-wrapper {
     gap: 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    border: 1px solid #0483aa;
-    padding: 20px;
-    border-radius: 25px;
-    box-shadow: 5px 5px 10px #0483aa15;
+    align-items: center;
 }
 
 .produs-wrapper h2 {
     font-size: 18px;
     letter-spacing: 1px;
-    font-weight: 500;
+    font-weight: 400;
     margin: 0px;
 }
 
-.form-title {
-    align-self: center;
-    font-weight: 300;
+.wrapper {
+    margin-top: 100px;
 }
 
-.form-wrapper {
-    padding-top: 30px;
-    margin-bottom: 50px;
-    width: 190px;
+body {
     display: flex;
     flex-direction: column;
-}
-
-.form-wrapper p {
-    margin-bottom: 5px;
-}
-
-
-input {
-    font-size: 14px;
-    border-color: #0483aa;
-    border-radius: 3px;
-    margin: 10px 0;
-}
-
-.btn {
-    font-size: 14px;
-    text-decoration: none;
-    background-color: #0483aa;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-    border: none;
-    padding: 5px 12px;
-    border-radius: 25px;
-    margin: 3px;
-}
-
-.wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 70px;
     align-items: center;
 }
 
-.btn:hover {
-    transition: 0.5s;
-    background-color: #0483aad2;
+.form-title {
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.form-wrapper {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+.table {
+    width: 40vw;
+}
+
+.btn-td {
+    width: 0;
 }
 
 .btn-wrapper {
     display: flex;
-    align-items: center;
-}
-
-.btn-td {
-    width: 1px;
 }
 
 .btn-back {
-    font-size: 17px;
     position: absolute;
     top: 30px;
     left: 30px;
-    margin-top: 10px;
-}
-
-table {
-    border-collapse: collapse;
-    width: 40%;
-}
-
-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-table th {
-    text-align: left;
-    background-color: #e0e0e0;
-}
-
-table h3,
-table h2 {
-    letter-spacing: 1px;
-    font-weight: 300;
-    margin: 0px;
 }

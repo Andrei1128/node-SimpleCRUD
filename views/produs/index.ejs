@@ -1,7 +1,7 @@
 <% layout('boilerplate/layout.ejs') %>
     <div class="form-wrapper">
         <h2 class="form-title">Adauga produs</h2>
-        <form action="/produse" method="POST">
+        <form class="form" action="/produse" method="POST">
             <input required type="text" name="nume" placeholder="Nume">
             <input required type="text" name="cantitate" placeholder="Cantitate">
             <button class="btn">Adauga</button>
@@ -11,10 +11,10 @@
         <thead>
             <tr>
                 <th>
-                    <h2> Nume</h2>
+                    Nume
                 </th>
                 <th>
-                    <h2>Cantitate</h2>
+                    Cantitate
                 </th>
             </tr>
         </thead>
@@ -22,15 +22,11 @@
             <% for(let produs of produse) { %>
                 <tr>
                     <td>
-                        <h3>
-                            <%= produs.nume %>
-                        </h3>
+                        <%= produs.nume %>
                     </td>
                     <td>
-                        <h3>
-                            <%= produs.cantitate %>
-                                pcs
-                        </h3>
+                        <%= produs.cantitate %>
+                            pcs
                     </td>
                     <td class="btn-td">
                         <div class="btn-wrapper">

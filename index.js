@@ -33,6 +33,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
+app.get("/", (req, res) => {
+  res.redirect("/produse");
+});
+
 app.get("/produse", (req, res) => {
   res.render("produs/index.ejs", { produse });
 });
@@ -48,9 +52,9 @@ app.delete("/produse/:id", (req, res) => {
 });
 
 app.put("/produse/:id", (req, res) => {
-  index = produse.findIndex((produs) => produs.id === req.params.id);
-  produse[index].nume = req.body.nume;
-  produse[index].cantitate = req.body.cantitate;
+  var produs = produse.find((produs) => produs.id === req.params.id);
+  produs.nume = req.body.nume;
+  produs.cantitate = req.body.cantitate;
   res.redirect("/produse");
 });
 
