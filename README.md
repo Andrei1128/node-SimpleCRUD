@@ -4,3 +4,6 @@ Prima aplicatie creata de mine de acest tip, createa pentru a invata
 Permite gestionarea produselor (create,read,update,delete)
 
 Utilizeaza ejs pentru a randa paginile
+
+## Proiect urmator: 
+https://github.com/Andrei1128/express-MVC-SimpleCRUD
